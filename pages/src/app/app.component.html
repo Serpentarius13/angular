@@ -1,0 +1,30 @@
+<nav>
+  <ul class="pagination">
+    <li class="page-item" [appClass]="{ disabled: curPage === 0 }">
+      <a (click)="curPage = curPage - 1" class="page-link">Prev</a>
+    </li>
+    <ng-container *appLoop="images; let i = index">
+      <li
+        *ngIf="checkLength(i)"
+        class="page-item"
+        [appClass]="{ active: i === curPage }"
+      >
+        <a (click)="curPage = i" class="page-link">{{ i + 1 }}</a>
+      </li>
+    </ng-container>
+    <li
+      class="page-item"
+      [appClass]="{ disabled: curPage === images.length - 1 }"
+    >
+      <a (click)="curPage = curPage + 1" class="page-link">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<h1 appClass>{{ images[curPage].title }}</h1>
+<img [src]="images[curPage].url" />
+
+
+<ul>
+  <li *appLoop="images"> 5 </li>
+</ul>
