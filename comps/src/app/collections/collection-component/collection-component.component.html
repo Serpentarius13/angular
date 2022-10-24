@@ -1,0 +1,25 @@
+<app-divider>
+  Paste Paste Paste
+</app-divider>
+<app-table [data]="data" [headers]="headers"> </app-table>
+
+<app-divider> Paste </app-divider>
+
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui vertical fluid tabular menu">
+      <a routerLink="./"> Biography </a>
+    </div>
+    <div class="ui vertical fluid tabular menu">
+      <a routerLink="companies"> Companies </a>
+    </div>
+    <div class="ui vertical fluid tabular menu">
+      <a routerLink="partners"> Partners </a>
+    </div>
+  </div>
+  <div class="twelve wide stretched column">
+    <div class="ui segment">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

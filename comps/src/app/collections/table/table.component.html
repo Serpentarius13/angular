@@ -1,0 +1,14 @@
+<table class="ui table">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers">{{ header.label }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let datoed of data">
+      <td *ngFor="let header of headers">
+        {{ datoed[header.key] }}
+      </td>
+    </tr>
+  </tbody>
+</table>
